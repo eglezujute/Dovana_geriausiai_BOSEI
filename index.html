@@ -7,11 +7,11 @@
 
 <style>
 :root{
---bg:#ffc37c;
---card:rgba(255, 159, 78, 0.95);
---text:#3c3e43;
---yes:#22c55e;
---no:#ef4444;
+  --bg:#E8EFE5;
+  --card:#FFFCF5;
+  --text:#35463A;
+  --yes:#B8D8B0;
+  --no:#E8B8B0;
 }
 
 *{box-sizing:border-box}
@@ -62,7 +62,7 @@ overflow-y:auto;          /* 👈 SCROLL VIDUJE */
 background:var(--card);
 padding:32px;
 border-radius:24px;
-box-shadow:0 40px 120px rgba(0,0,0,.6);
+box-shadow: 0 24px 70px rgba(40,50,40,.16);
 text-align:center;
 }
 
@@ -92,8 +92,8 @@ min-width:120px;
 text-decoration:none;
 }
 
-.yes{background:var(--yes);color:#3c3e43}
-.no{background:var(--no);color:#3c3e43}
+.yes{background:var(--yes);color:var(--text);}
+.no{background:var(--no);color:var(--text);}
 
 /* intro */
 .intro-text{
@@ -152,7 +152,7 @@ z-index:9999;
 }
 
 .modal{
-background:#ffc37c;
+background:var(--card);
 padding:26px;
 border-radius:20px;
 width:min(700px,92vw);
@@ -315,7 +315,7 @@ Egzotinė gyvų vabzdžių vakarienė Vilniuje dviems 🐜
 Tai neeilinė gastronominė patirtis, atvykstanti tik vieną kartą į Lietuvą. Rytų virtuvės restoranas kviečia į drąsų, netikėtą ir nepamirštamą potyrį – pažinti ateities gastronomiją per egzotinius skonius.<br>
 Šios dovanos metu laukia autentiška degustacija, kurioje subtiliai ir profesionaliai paruošti patiekalai atskleidžia netradicinę, tačiau vis labiau pasaulyje vertinamą maisto kryptį. Svečiai turės galimybę paragauti dar gyvų bambukų bei šilkaverpių lervų, kruopščiai paruoštų miltines kandies lervų, svirplių bei kitų egzotinių ingredientų, kurie rytų virtuvėje interpretuojami kaip inovatyvūs, maistingi ir gurmaniški skoniai.  
 </div>
-<img src="https://cdn.corenexis.com/f/iGD8kv71e4G.jpg">
+<img src="https://media.cnn.com/api/v1/images/stellar/prod/gettyimages-1320795782.jpg?c=original&q=w_860,c_fill/f_avif">
 <h2>Ar išrinkta dovana atitinka Jūsų poreikius? 🎁</h2>
 <div class="controls">
 <button class="btn yes" onclick="openFinal()">TAIP</button>
