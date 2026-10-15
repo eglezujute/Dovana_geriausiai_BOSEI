@@ -192,36 +192,22 @@ top:65%;
     margin:auto;
   }
 }
-/* Pagal nutylėjimą užuomina paslėpta */
+
+/* Elegantiška slinkimo užuomina */
 .scroll-hint{
   display:none;
 }
-/* Fiksuota slinkimo užuomina telefone */
-@media (max-width:600px){
-  .card{
-    position:relative;
-  }
 
+@media (max-width:600px){
   .scroll-hint{
     display:flex;
-    position:sticky;
-    bottom:0;
-    z-index:5;
     flex-direction:column;
     align-items:center;
-    justify-content:center;
-    gap:3px;
-    margin:0 -16px -20px;
-    padding:12px 8px 10px;
-    background:linear-gradient(
-      to bottom,
-      rgba(255,252,245,0),
-      #FFFCF5 35%
-    );
+    gap:4px;
+    margin:10px auto 4px;
     color:#718570;
     font-size:12px;
-    text-align:center;
-    pointer-events:none;
+    letter-spacing:.3px;
     animation:scrollHint 1.8s ease-in-out infinite;
   }
 
@@ -232,20 +218,14 @@ top:65%;
 
   @keyframes scrollHint{
     0%,100%{
-      opacity:.6;
+      opacity:.45;
       transform:translateY(0);
     }
     50%{
       opacity:1;
-      transform:translateY(4px);
+      transform:translateY(5px);
     }
   }
-}
-
-.scroll-hint.is-hidden{
-  opacity:0;
-  visibility:hidden;
-  animation:none;
 }
 
 </style>
@@ -465,33 +445,7 @@ document.getElementById("result").style.display="grid";
 }
 
 function restart(){
-  step = 0;
-  update();
-  document.getElementById("result").style.display="none";
-  noBtn.style.position="relative";
-  noBtn.style.left="";
-  noBtn.style.top="";
-}
-
-/* Užuominos slėpimas slenkant */
-const introCard = document.querySelector(".scene:first-child .card");
-const introHint = document.querySelector(".scene:first-child .scroll-hint");
-
-function checkScrollHint() {
-  if (!introCard || !introHint) return;
-
-  const atBottom =
-    introCard.scrollTop + introCard.clientHeight >=
-    introCard.scrollHeight - 30;
-
-  introHint.classList.toggle("is-hidden", atBottom);
-}
-
-introCard.addEventListener("scroll", checkScrollHint);
-window.addEventListener("resize", checkScrollHint);
-
-checkScrollHint();
-
+step = 0;
 update();
 document.getElementById("result").style.display="none";
 noBtn.style.position="relative";
