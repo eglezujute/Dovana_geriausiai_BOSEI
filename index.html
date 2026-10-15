@@ -239,6 +239,12 @@ top:65%;
   }
 }
 
+.scroll-hint.is-hidden{
+  opacity:0;
+  visibility:hidden;
+  animation:none;
+}
+
 </style>
 </head>
 
@@ -457,6 +463,24 @@ document.getElementById("result").style.display="grid";
 
 function restart(){
 step = 0;
+
+const card = document.querySelector(".card");
+const scrollHint = document.querySelector(".scene:first-child .scroll-hint");
+
+function checkScrollHint(){
+  if(!card || !scrollHint) return;
+
+  const atBottom =
+    card.scrollHeight - card.scrollTop - card.clientHeight <= 15;
+
+  scrollHint.classList.toggle("is-hidden", atBottom);
+}
+
+card.addEventListener("scroll", checkScrollHint);
+window.addEventListener("resize", checkScrollHint);
+
+checkScrollHint();
+
 update();
 document.getElementById("result").style.display="none";
 noBtn.style.position="relative";
