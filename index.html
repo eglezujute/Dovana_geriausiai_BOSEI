@@ -192,6 +192,42 @@ top:65%;
     margin:auto;
   }
 }
+
+/* Elegantiška slinkimo užuomina */
+.scroll-hint{
+  display:none;
+}
+
+@media (max-width:600px){
+  .scroll-hint{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:4px;
+    margin:10px auto 4px;
+    color:#718570;
+    font-size:12px;
+    letter-spacing:.3px;
+    animation:scrollHint 1.8s ease-in-out infinite;
+  }
+
+  .scroll-hint .arrow{
+    font-size:23px;
+    line-height:1;
+  }
+
+  @keyframes scrollHint{
+    0%,100%{
+      opacity:.45;
+      transform:translateY(0);
+    }
+    50%{
+      opacity:1;
+      transform:translateY(5px);
+    }
+  }
+}
+
 </style>
 </head>
 
@@ -212,6 +248,11 @@ Ačiū už Jūsų energiją, empatiją ir palaikymą. Linkime, kad įkvėpimo ni
 O dabar – metas dovanai! 🎁<br>
 Geriausiai bosei norisi padovanoti pačią geriausią dovaną! O juk tokia dovana negali būti parinkta bet kaip – ji turi būti asmeniška. Todėl nusprendėme, kad geriausią dovaną įteiksime tik atlikus trumpą, bet labai svarbų DOVANOS TESTĄ.<br>
 Jūsų atsakymai padės mums išsiaiškinti, kokia dovana Jums tiktų labiausiai. 😏
+</div>
+
+<div class="scroll-hint">
+  <span>Dar šiek tiek žemyn...</span>
+  <span class="arrow">↓</span>
 </div>
 
 <div class="controls">
