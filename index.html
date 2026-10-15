@@ -56,14 +56,18 @@ display:flex;
 
 /* card */
 .card{
-width:min(760px,92vw);
-max-height:90vh;          /* 👈 SVARBU */
-overflow-y:auto;          /* 👈 SCROLL VIDUJE */
-background:var(--card);
-padding:32px;
-border-radius:24px;
-box-shadow: 0 24px 70px rgba(40,50,40,.16);
-text-align:center;
+  width:min(760px,92vw);
+  max-height:90vh;
+  max-height:90dvh;
+  overflow-y:scroll;
+  scrollbar-width:auto;
+  scrollbar-color:#8FA58D #E8EFE5;
+  box-sizing:border-box;
+  background:var(--card);
+  padding:32px;
+  border-radius:24px;
+  box-shadow:0 24px 70px rgba(40,50,40,.16);
+  text-align:center;
 }
 
 .card img{
@@ -179,6 +183,21 @@ to{transform:rotate(360deg)}
 position:fixed;
 left:55%;
 top:65%;
+}
+@media (max-width:600px){
+  .card{
+    width:94vw;
+    max-height:90vh;
+    max-height:90dvh;
+    padding:20px 16px;
+    border-radius:18px;
+  }
+
+  .card button{
+    max-width:100%;
+    white-space:normal;
+    overflow-wrap:anywhere;
+  }
 }
 </style>
 </head>
