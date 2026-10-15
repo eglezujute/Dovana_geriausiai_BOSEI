@@ -465,17 +465,24 @@ document.getElementById("result").style.display="grid";
 }
 
 function restart(){
-step = 0;
+  step = 0;
+  update();
+  document.getElementById("result").style.display="none";
+  noBtn.style.position="relative";
+  noBtn.style.left="";
+  noBtn.style.top="";
+}
 
-const introCard = document.querySelector(".card");
+/* Užuominos slėpimas slenkant */
+const introCard = document.querySelector(".scene:first-child .card");
 const introHint = document.querySelector(".scene:first-child .scroll-hint");
 
-function checkScrollHint(){
-  if(!introCard || !introHint) return;
+function checkScrollHint() {
+  if (!introCard || !introHint) return;
 
   const atBottom =
     introCard.scrollTop + introCard.clientHeight >=
-    introCard.scrollHeight - 25;
+    introCard.scrollHeight - 30;
 
   introHint.classList.toggle("is-hidden", atBottom);
 }
